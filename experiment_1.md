@@ -1,101 +1,33 @@
 
 
-<center><h2>Experiment 5</h2></center>
-
+<center><h2>Experiment 1</h2></center>
 <h4>Queries:</h4>
 
-### 1.Display the total number of employee working in the company.
+### 1.Create employee_master table with data using employee table
 ~~~sql
-SELECT COUNT(*) AS TOTAL_EMPLOYEES
-FROM EMPLOYEE;
+CREATE TABLE EMPLOYEE_MASTER AS SELECT * FROM EMPLOYEE;
 ~~~
 
-### 2.Display the total salary being paid to all employees.
+### 2.Delete all record into Employee_master whose DeptNo is 10
 ~~~sql
-SELECT SUM(SAL) AS TOTAL_SALARY
-FROM EMPLOYEE;
+DELETE FROM EMPLOYEE_MASTER
+WHERE DEPTNO = 10;
 ~~~
 
-### 3.Display the maximum salary from employee table.
+### 3.Update 10% in his salary of DEPTNO 20 into Employee_Master
 ~~~sql
-SELECT MAX(SAL) AS MAXIMUM_SALARY
-FROM EMPLOYEE;
+UPDATE EMPLOYEE_MASTER
+SET SAL = (SAL + IFNULL(COMM,0))* 1.10
+WHERE deptno = 20;
 ~~~
 
-### 4.Display the minimum salary from employee table.
+### 4.Alter SAL with size 10,2 in Employee_Master
 ~~~sql
-SELECT MIN(SAL) AS MINIMUM_SALARY
-FROM EMPLOYEE;
+ALTER TABLE EMPLOYEE_MASTER
+MODIFY SAL DECIMAL(10,2);
 ~~~
 
-### 5.Display the average salary from employee table
+### 5.Drop Employee_master Table
 ~~~sql
-SELECT AVG(SAL) AS AVERAGE_SALARY
-FROM EMPLOYEE;
-~~~
-
-### 6.Display the maximum salary being paid to clerk.
-~~~sql
-SELECT MAX(SAL) AS MAX_CLERK_SALARY
-FROM EMPLOYEE
-WHERE JOB = 'CLERK';
-~~~
-
-### 7.Display the maximum salary being paid in dept no 20.
-~~~sql
-SELECT MAX(SAL) AS MAX_DEPT20_SALARY
-FROM EMPLOYEE
-WHERE DEPTNO = 20;
-~~~
-
-### 8.Display the minimum salary paid to any salesman.
-~~~sql
-SELECT MIN(SAL) AS MIN_SALESMAN_SALARY
-FROM EMPLOYEE
-WHERE JOB = 'SALESMAN';
-~~~
-
-### 9.Display the average salary drawn by managers.
-~~~sql
-SELECT AVG(SAL) AS AVG_MANAGER_SALARY
-FROM EMPLOYEE
-WHERE JOB = 'MANAGER';
-~~~
-
-### 10.Display the total salary drawn by analyst working in dept no 40.
-~~~sql
-SELECT SUM(SAL) AS TOTAL_ANALYST_SALARY
-FROM EMPLOYEE
-WHERE JOB = 'ANALYST'
-AND DEPTNO = 40;
-~~~
-
-### 11.Display the names of the employee in Uppercase.
-~~~sql
-SELECT UPPER(ENAME) AS EMPLOYEE_NAME_UPPER
-FROM EMPLOYEE;
-~~~
-
-### 12.Display the names of the employee in Lowercase.
-~~~sql
-SELECT LOWER(ENAME) AS EMPLOYEE_NAME_LOWER
-FROM EMPLOYEE;
-~~~
-
-### 13.Display the names of the employee in Proper case.
-~~~sql
-SELECT CONCAT(UPPER(LEFT(ENAME,1)),LOWER(SUBSTRING(ENAME,2))) AS EMPLOYEE_NAME
-FROM EMPLOYEE;
-~~~
-
-### 14.Display the length of Your name using appropriate function.
-~~~sql
-SELECT LENGTH('DEVASHISH') AS NAME_LENGTH;
-~~~
-
-### 15.Display the length of all the employee names.
-~~~sql
-SELECT ENAME,
-LENGTH(ENAME) AS NAME_LENGTH
-FROM EMPLOYEE;
+DROP EMPLOYEE_MASTER;
 ~~~
