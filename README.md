@@ -1,106 +1,116 @@
-💾 SQL Lab Experiments Repository
+# 🗄️ DBMS Project – Database Management System
 
-This repository contains all structured SQL lab experiments performed using MySQL.
-It includes database creation, table creation, data insertion, selection queries, update queries, aggregate functions and string functions.
+This project is developed as part of the **DBMS (Database Management System)** course.  
+The objective of this project is to design and implement a **well-structured database system** that efficiently stores, retrieves, and manages data using SQL.
 
-The purpose of this repository is to practice and demonstrate basic to intermediate SQL concepts used in relational database management systems.
+---
 
-📚 Experiments Included
-🧪 Experiment 0 – Database & Table Creation
+## 📌 Project Objective
+- To understand database design concepts
+- To implement SQL queries on a real-world problem
+- To perform CRUD operations (Create, Read, Update, Delete)
+- To ensure data consistency and integrity
 
-Show and create database
+---
 
-Create tables (DEPARTMENT, EMPLOYEE)
+## 🛠️ Technologies Used
+- Database: MySQL / MariaDB / Oracle SQL  
+- Language: SQL  
+- Tool: MySQL Workbench / SQL Plus / phpMyAdmin  
+- Platform: Windows  
 
-Primary key & foreign key
+---
 
-Insert records
+## 📂 Project Structure
+DBMS_Project/
+│
+├── schema.sql # Database and table creation
+├── insert.sql # Sample data insertion
+├── queries.sql # SQL queries (SELECT, JOIN, GROUP BY, etc.)
+├── constraints.sql # Keys and constraints
+├── README.md # Project documentation
 
-Display tables and data
 
-🧪 Experiment 1 – Table Operations
+---
 
-Create table using another table
+## 🗃️ Database Design
+### Tables Used
+- **Table 1:** Stores main entity information  
+- **Table 2:** Stores related/secondary data  
+- **Table 3:** Used for relationships (if applicable)
 
-Delete records
+### Keys Used
+- Primary Key  
+- Foreign Key  
+- Unique Key  
 
-Update salary
+---
 
-Alter table structure
+## ⚙️ How to Run the Project
 
-Drop table
+### 1️⃣ Create Database
+```sql
+CREATE DATABASE dbms_project;
+USE dbms_project;
+2️⃣ Create Tables
+SOURCE schema.sql;
+3️⃣ Insert Data
+SOURCE insert.sql;
+4️⃣ Execute Queries
+SOURCE queries.sql;
+📊 SQL Operations Performed
+CREATE TABLE
 
-🧪 Experiment 2 – Selection Queries
+INSERT
 
-DISTINCT, WHERE conditions
+UPDATE
 
-AND, OR, IN, NOT IN
+DELETE
 
-BETWEEN, LIKE
+SELECT
 
-Filtering records
+JOIN
 
-🧪 Experiment 3 – Sorting & Salary Queries
+GROUP BY
 
-ORDER BY (ascending/descending)
+HAVING
 
-Pattern matching using LIKE
+SUBQUERIES
 
-Salary calculations
+✅ Features
+Structured relational database
 
-Annual and total salary queries
+Data integrity using constraints
 
-🧪 Experiment 4 – Date & Update Queries
+Optimized queries
 
-Date conditions
-
-String length functions
-
-Salary increment queries
-
-HRA, DA, PF and total salary calculation
-
-🧪 Experiment 5 – Aggregate & String Functions
-
-COUNT, SUM, AVG, MIN, MAX
-
-Department-wise salary queries
-
-Uppercase, lowercase, proper case
-
-Length functions
-
-🛠️ Tools & Technology Used
-
-MySQL Database
-
-SQL (Structured Query Language)
-
-GitHub for version control
-
-📂 Repository Structure
-SQL-Lab/
- ├── experiment0.sql
- ├── experiment1.sql
- ├── experiment2.sql
- ├── experiment3.sql
- ├── experiment4.sql
- ├── experiment5.sql
- └── README.md
+Easy to understand schema
 
 🎯 Learning Outcomes
+Understanding of relational databases
 
-Understanding of basic SQL commands
+Hands-on experience with SQL
 
-Working with tables and constraints
+Practical use of normalization
 
-Performing CRUD operations
+Query optimization techniques
 
-Using aggregate and string functions
+👨‍🎓 Author
+Devashish Srivastava
+B.Tech CSE
+DBMS Course Project
 
-Writing real-world SQL queries
+📄 License
+This project is created for academic purposes only.
 
-👨‍💻 Author
 
-md Imran
-SQL Lab & Database Practice Repository
+---
+
+### 💡 Want it customized?
+I can instantly tailor this README for:
+- **Library Management System**
+- **Student Management System**
+- **Hospital / Banking / Employee DB**
+- **ER Diagram + Normalization based project**
+
+Bas project ka **topic bata do** 
