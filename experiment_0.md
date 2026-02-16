@@ -1,58 +1,100 @@
 
-**xperiment 0**
-How to show database?
-SHOW DATABASES;
-How to create database?
-CREATE DATABASE 2CSE11_490;
-How to use database?
-USE 2CSE11_490;
-How to create table?
-CREATE TABLE DEPARTMENT(
-    DEPTNO INT(2) PRIMARY KEY,
-    DNAME VARCHAR(15) NOT NULL
-);
-How to describe a department?
-DESC DEPARTMENT;
-How to create a table employee?
-CREATE TABLE EMPLOYEE(
-    EMPNO INT(4) PRIMARY KEY,
-    ENAME VARCHAR(20) NOT NULL,
-    JOB VARCHAR(20),
-    MGR INT(4),
-    HIREDATE DATE,
-    SAL INT(10),
-    COMM INT(7),
-    DEPTNO INT(2),
-    CONSTRAINT FK_EMP_DEPT
-    FOREIGN KEY(DEPTNO)
-    REFERENCES DEPARTMENT(DEPTNO)
-);
-How to describe employee?
-DESC EMPLOYEE;
-How to show tables?
-SHOW TABLES;
-How to insert value?
-INSERT INTO DEPARTMENT VALUES(10,"RESEARCH"),
-(20,"ACCOUNTING"),
-(30,"SALES"),
-(40,"OPERATIONS");
-How to display all records?
-SELECT * FROM DEPARTMENT;
-How to insert value into employee table?
-INSERT INTO EMPLOYEE VALUES
-    -> (7369,'SMITH','CLERK',7902,'1980-12-17',800,NULL,20),
-    -> (7499,'ALLEN','SALESMAN',7698,'1981-02-20',1600,300,30),
-    -> (7521,'WARD','SALESMAN',7698,'1981-02-22',1250,300,30),
-    -> (7566,'JONES','MANAGER',7839,'1981-04-02',2975,NULL,20),
-    -> (7654,'MARTIN','SALESMAN',7698,'1981-09-28',1250,1400,30),
-    -> (7698,'BLAKE','MANAGER',7839,'1981-05-01',2850,NULL,30),
-    -> (7782,'CLARK','MANAGER',7839,'1981-06-09',2450,NULL,20),
-    -> (7788,'SCOTT','ANALYST',7566,'1982-12-09',3000,NULL,40),
-    -> (7839,'KING','PRESIDENT',NULL,'1981-11-17',5000,NULL,20),
-    -> (7844,'TURNER','SALESMAN',7698,'1981-09-08',1500,0,30),
-    -> (7876,'ADAMS','CLERK',7788,'1983-01-12',1100,NULL,20),
-    -> (7900,'JAMES','CLERK',7698,'1981-12-03',950,NULL,30),
-    -> (7902,'FORD','ANALYST',7566,'1981-12-03',3000,NULL,20),
-    -> (7934,'MILLER','CLERK',7782,'1982-01-23',1300,NULL,10);
-How to display all records?
-SELECT * FROM EMPLOYEE;    isko github pe upload krna hai to isko achhe se arrange kro 
+<center><h2>Experiment 5</h2></center>
+
+<h4>Queries:</h4>
+
+### 1.Display the total number of employee working in the company.
+~~~sql
+SELECT COUNT(*) AS TOTAL_EMPLOYEES
+FROM EMPLOYEE;
+~~~
+
+### 2.Display the total salary being paid to all employees.
+~~~sql
+SELECT SUM(SAL) AS TOTAL_SALARY
+FROM EMPLOYEE;
+~~~
+
+### 3.Display the maximum salary from employee table.
+~~~sql
+SELECT MAX(SAL) AS MAXIMUM_SALARY
+FROM EMPLOYEE;
+~~~
+
+### 4.Display the minimum salary from employee table.
+~~~sql
+SELECT MIN(SAL) AS MINIMUM_SALARY
+FROM EMPLOYEE;
+~~~
+
+### 5.Display the average salary from employee table
+~~~sql
+SELECT AVG(SAL) AS AVERAGE_SALARY
+FROM EMPLOYEE;
+~~~
+
+### 6.Display the maximum salary being paid to clerk.
+~~~sql
+SELECT MAX(SAL) AS MAX_CLERK_SALARY
+FROM EMPLOYEE
+WHERE JOB = 'CLERK';
+~~~
+
+### 7.Display the maximum salary being paid in dept no 20.
+~~~sql
+SELECT MAX(SAL) AS MAX_DEPT20_SALARY
+FROM EMPLOYEE
+WHERE DEPTNO = 20;
+~~~
+
+### 8.Display the minimum salary paid to any salesman.
+~~~sql
+SELECT MIN(SAL) AS MIN_SALESMAN_SALARY
+FROM EMPLOYEE
+WHERE JOB = 'SALESMAN';
+~~~
+
+### 9.Display the average salary drawn by managers.
+~~~sql
+SELECT AVG(SAL) AS AVG_MANAGER_SALARY
+FROM EMPLOYEE
+WHERE JOB = 'MANAGER';
+~~~
+
+### 10.Display the total salary drawn by analyst working in dept no 40.
+~~~sql
+SELECT SUM(SAL) AS TOTAL_ANALYST_SALARY
+FROM EMPLOYEE
+WHERE JOB = 'ANALYST'
+AND DEPTNO = 40;
+~~~
+
+### 11.Display the names of the employee in Uppercase.
+~~~sql
+SELECT UPPER(ENAME) AS EMPLOYEE_NAME_UPPER
+FROM EMPLOYEE;
+~~~
+
+### 12.Display the names of the employee in Lowercase.
+~~~sql
+SELECT LOWER(ENAME) AS EMPLOYEE_NAME_LOWER
+FROM EMPLOYEE;
+~~~
+
+### 13.Display the names of the employee in Proper case.
+~~~sql
+SELECT CONCAT(UPPER(LEFT(ENAME,1)),LOWER(SUBSTRING(ENAME,2))) AS EMPLOYEE_NAME
+FROM EMPLOYEE;
+~~~
+
+### 14.Display the length of Your name using appropriate function.
+~~~sql
+SELECT LENGTH('DEVASHISH') AS NAME_LENGTH;
+~~~
+
+### 15.Display the length of all the employee names.
+~~~sql
+SELECT ENAME,
+LENGTH(ENAME) AS NAME_LENGTH
+FROM EMPLOYEE;
+~~~
