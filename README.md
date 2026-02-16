@@ -96,7 +96,7 @@ Practical use of normalization
 Query optimization techniques
 
 👨‍🎓 Author
-Devashish Srivastava
+Md Imran
 B.Tech CSE
 DBMS Course Project
 
@@ -113,4 +113,4 @@ I can instantly tailor this README for:
 - **Hospital / Banking / Employee DB**
 - **ER Diagram + Normalization based project**
 
-Bas project ka **topic bata do** 
+
